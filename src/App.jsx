@@ -1,13 +1,9 @@
-import Footer from './Footer/Footer'
-import Header from './Header/Header'
-import MainArea from './Mainarea/Mainarea'
+
 
 function App() {
   return (
     <>
-      <Header></Header>
-      <MainArea></MainArea>
-      <Footer></Footer>
+      <h1>This is APP</h1>
     </>
   )
 }
