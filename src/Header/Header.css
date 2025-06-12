@@ -1,0 +1,15 @@
+.mynav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(163, 188, 196);
+    margin: 10px;
+  }
+  .mynav ul{
+    display: flex;
+    padding:0px;
+  }
+  .mynav ul li{
+    list-style: none;
+    width:100px;
+  }
