@@ -1,7 +1,7 @@
 import React from "react";
 
 function Counter(props) {
-    var { step, children } = props;
+  var { step, children } = props;
   //state
   var [count, setCount] = React.useState(+children);
   //action
@@ -31,7 +31,13 @@ function Counter(props) {
       >
         Decrement
       </button>
-      <button onClick={()=>{props.a()}}>Peddodu</button>
+      <button
+        onClick={() => {
+          props.a();
+        }}
+      >
+        Peddodu
+      </button>
     </div>
   );
 }
