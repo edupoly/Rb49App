@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-
+import "./Products.css";
+import Product from "./Product";
 function Products() {
   var [products, setProducts] = React.useState([]);
 
@@ -8,16 +9,16 @@ function Products() {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setProducts([...data]);
       });
   }, []);
 
   return (
-    <div className="border border-5 p-2 m-2 border-info">
-      <h1>Products Length:{products.length}</h1>
-      <ul>
+    <div className="border border-1 p-2 m-2 bg-light">
+      <ul className="products-list">
         {products.map((product) => {
-          return <li>{product.title}</li>;
+          return <Product product={product}></Product>;
         })}
       </ul>
     </div>
