@@ -63,22 +63,12 @@ function StudentForm() {
       <h1>StudentForm</h1>
       <p>{JSON.stringify(studentForm.errors)}</p>
       <form onSubmit={studentForm.handleSubmit}>
-        <input
-          type="text"
-          name="firstname"
-          onChange={studentForm.handleChange}
-          onBlur={studentForm.handleBlur}
-        />
+        <input type="text" {...studentForm.getFieldProps("firstname")} />
         {studentForm.touched.firstname && studentForm.errors.firstname && (
           <div>"Firstname is mandatory"</div>
         )}
         <br />
-        <input
-          type="text"
-          name="lastname"
-          onChange={studentForm.handleChange}
-          onBlur={studentForm.handleBlur}
-        />
+        <input type="text" {...studentForm.getFieldProps("lastname")} />
         {studentForm.touched.lastname && studentForm.errors.lastname && (
           <div>"Last enter cheyy ra rey"</div>
         )}
