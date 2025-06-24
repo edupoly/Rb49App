@@ -61,7 +61,6 @@ function StudentForm() {
   return (
     <div className="border border-2 p-1 m-1 border-secondary">
       <h1>StudentForm</h1>
-      <p>{JSON.stringify(studentForm.errors)}</p>
       <form onSubmit={studentForm.handleSubmit}>
         <input type="text" {...studentForm.getFieldProps("firstname")} />
         {studentForm.touched.firstname && studentForm.errors.firstname && (
