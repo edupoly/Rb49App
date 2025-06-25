@@ -17,9 +17,9 @@ function App() {
       <Counter step={10} a={abc}>
         100
       </Counter>
-      <Counter step={5} a={abc}>
+      {/* <Counter step={5} a={abc}>
         200
-      </Counter>
+      </Counter> */}
     </div>
   );
 }
