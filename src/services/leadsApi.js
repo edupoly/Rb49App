@@ -9,9 +9,38 @@ export const leadsApi = createApi({
     getAllLeads: builder.query({
       query: () => `/`,
     }),
+    getLeadDetailsById: builder.query({
+      query: (id) => `/${id}`,
+    }),
+    addNewLead: builder.mutation({
+      query: (lead) => ({
+        url: `/`,
+        method: "POST",
+        body: lead,
+      }),
+    }),
+    deleteLead: builder.mutation({
+      query: (id) => ({
+        url: `/${id}`,
+        method: "DELETE",
+      }),
+    }),
+    updateLead: builder.mutation({
+      query: (lead) => ({
+        url: `/${lead["_id"]}`,
+        method: "PUT",
+        body: lead,
+      }),
+    }),
   }),
 });
 
-// Export hooks for usage in functional components, which are
-// auto-generated based on the defined endpoints
-export const { useGetAllLeadsQuery } = leadsApi;
+export const {
+  useGetAllLeadsQuery,
+  useLazyGetAllLeadsQuery,
+  useAddNewLeadMutation,
+  useDeleteLeadMutation,
+  useGetLeadDetailsByIdQuery,
+  useLazyGetLeadDetailsByIdQuery,
+  useUpdateLeadMutation,
+} = leadsApi;
